@@ -1,14 +1,14 @@
 
 import React from 'react';
-import {PomodoroTimer} from './components/pomodoro-timer'
+import { PomodoroTimer } from './components/pomodoro-timer';
 
 function App(): JSX.Element {
   return (
     <div className="container">
       <PomodoroTimer 
-        pomodoroTime={1500}
-        shortRestTime={300}
-        longRestTime={900}
+        pomodoroTime={300}
+        shortRestTime={20}
+        longRestTime={50}
         cycles={4}
       />
     </div>
