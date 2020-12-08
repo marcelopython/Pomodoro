@@ -1,0 +1,10 @@
+.modal-header{
+    display: flex;
+    float: right;
+}
+
+.close-modal{
+    border: 0;
+    background-color: rgba(0,0,0,0);
+    cursor:pointer;
+}

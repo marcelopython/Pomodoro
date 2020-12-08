@@ -3,11 +3,11 @@ import { useInterval } from '../hooks/use-interval'
 import { secoundsToTime } from '../utils/seconds-to-time';
 import { Button } from './button';
 import { Timer } from './timer';
+import ConfigurationTime from './configuration-time'
 const bellStart = require('../sounds/bell-start.mp3');
 const bellFinish = require('../sounds/bell-finish.mp3');
 const audioStartWorking = new Audio(bellStart.default);
 const audioFinishWorking = new Audio(bellFinish.default);
-
 interface Props {
     pomodoroTime: number;
     shortRestTime: number;
@@ -29,7 +29,7 @@ export function PomodoroTimer(props: Props): JSX.Element {
 
     useInterval(() => {
         setMainTime(mainTime - 1);
-        if ( working ) setFullWorkingTime(fullWorkingTime + 1); 
+        if (working) setFullWorkingTime(fullWorkingTime + 1);
 
     }, timeCounting ? 1000 : null);
 
@@ -109,7 +109,11 @@ export function PomodoroTimer(props: Props): JSX.Element {
 
     return (
         <div className="pomodoro">
-            <h2>Você está: {working ? 'Trabalhando' : 'Descansando'}</h2>
+            <div className="header">
+                <ConfigurationTime />
+                <br/>
+                <h2>Você está: {working ? 'Trabalhando' : 'Descansando'}</h2>
+            </div>
             <Timer mainTime={mainTime} />
             <div className="controls">
                 <Button text="Work" onclick={() => configurerWork()} />
