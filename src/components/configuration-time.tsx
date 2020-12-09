@@ -1,18 +1,24 @@
-import React from 'react';
+import React, { ElementRef, SyntheticEvent } from 'react';
 import './configurationTime.css';
 import {ModalConfiguration} from './modal';
+import ConfigurationDto from '../Dto/ConfigurationDto'
 
-export default class ConfigurationTime extends React.Component{
+export const ConfigurationTime = (): JSX.Element =>{
 
-    constructor(props = false){
-        super(props);
+
+    const handleSubmitConfiguration = (event: React.ChangeEvent<HTMLInputElement[]>): void=>{
+        event.preventDefault()
+        let form = event.target;
+        if(!form)return;
+        console.dir(form)
+        // new ConfigurationDto(input.name);
+
+
     }
 
-    render(): JSX.Element{
-        return (
-            <div className="configuration">
-                <ModalConfiguration/>
-            </div>
-        )
-    }
+    return (
+        <div className="configuration">
+            <ModalConfiguration formEvent={handleSubmitConfiguration}/>
+        </div>
+    )
 }

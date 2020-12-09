@@ -3,11 +3,13 @@ import { useInterval } from '../hooks/use-interval'
 import { secoundsToTime } from '../utils/seconds-to-time';
 import { Button } from './button';
 import { Timer } from './timer';
-import ConfigurationTime from './configuration-time'
+import { ConfigurationTime } from './configuration-time';
+
 const bellStart = require('../sounds/bell-start.mp3');
 const bellFinish = require('../sounds/bell-finish.mp3');
 const audioStartWorking = new Audio(bellStart.default);
 const audioFinishWorking = new Audio(bellFinish.default);
+
 interface Props {
     pomodoroTime: number;
     shortRestTime: number;
@@ -106,7 +108,7 @@ export function PomodoroTimer(props: Props): JSX.Element {
         configurerResting,
         setCyclesQtdManage,
     ]);
-
+    
     return (
         <div className="pomodoro">
             <div className="header">

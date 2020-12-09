@@ -8,3 +8,74 @@
     margin:0 0;
     padding: 0 0;
 }
+
+.container-form{
+    width: 50%;
+    margin: 0 auto;
+}
+
+.label-control{
+    display: block;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: 15px;
+}
+
+.form-control{
+    padding:8px;
+    font-size: 14px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid rgb(25, 7, 128);
+}
+
+.form-control:active{
+    border: 1px solid rgb(199, 196, 23);
+}
+
+.contanier-btn{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.btn{
+    padding: 10px;
+    margin: 5px;
+    border: 0;
+    box-shadow: dimgrey 2px 2px;
+    border-radius: 5px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.btn-blue{
+    background-color: dodgerblue;
+}
+
+.btn-danger{
+    background-color: red;
+}
+
+@media  only screen and (max-width: 714px){
+    .container-form{
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+@media  only screen and (max-width: 300px){
+    .btn{
+        width: 100%;
+        display: block;
+    }
+    .contanier-btn{
+        padding: 15px;
+        display: inline;
+    }
+}
+
+.modal-header{
+    width: 100%;
+    align-content: space-between;
+    justify-content: space-between;
+}
