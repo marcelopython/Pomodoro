@@ -3,7 +3,6 @@ import { useInterval } from '../hooks/use-interval'
 import { secoundsToTime } from '../utils/seconds-to-time';
 import { Button } from './button';
 import { Timer } from './timer';
-import { ConfigurationTime } from './configuration-time';
 
 const bellStart = require('../sounds/bell-start.mp3');
 const bellFinish = require('../sounds/bell-finish.mp3');
@@ -112,8 +111,6 @@ export function PomodoroTimer(props: Props): JSX.Element {
     return (
         <div className="pomodoro">
             <div className="header">
-                <ConfigurationTime />
-                <br/>
                 <h2>Você está: {working ? 'Trabalhando' : 'Descansando'}</h2>
             </div>
             <Timer mainTime={mainTime} />
